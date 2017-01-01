@@ -1,0 +1,16 @@
+#!/bin/sh
+cd $(dirname $(readlink -e $0))
+pf=RUNNING_PID
+nohup=nohup.out
+
+if [ -f $pf ]; then
+   pid=`cat $pf` > /dev/null
+   rm $pf > /dev/null
+   kill -9 $pid > /dev/null
+fi
+
+if [ -f $nohup ]; then
+   rm $nohup > /dev/null
+fi
+
+exit 0

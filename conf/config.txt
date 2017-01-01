@@ -1,0 +1,7 @@
+# application port
+port=8000
+
+db.driver=org.postgresql.Driver
+db.url=jdbc:postgresql://localhost:5432/pean
+db.user=pg_user
+db.password=12345

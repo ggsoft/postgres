@@ -1,0 +1,3 @@
+#!/bin/sh
+tar -czvf app.tar.gz target/pack/lib
+# tar -xvf app.tar.gz - extract

@@ -1,0 +1,7 @@
+#!/bin/sh
+mem=256m
+cd $(dirname $(readlink -e $0))
+PATH=$JAVA_HOME/bin:$PATH
+nohup java -Xms$mem -Xmx$mem -cp 'target/pack/lib/*' app.Server&
+echo $! > RUNNING_PID
+exit 0
