@@ -19,19 +19,19 @@ object Article {
 
   def findAll: List[Article] =
     DB.withConnection { implicit con =>
-      SQL("SELECT * FROM articles") as parser.*
+      SQL("SELECT * FROM articles1") as parser.*
     }
 
   def find(id: Long): Option[Article] =
     if (id > 0) {
       DB.withConnection { implicit con =>
-        (SQL("SELECT * FROM articles WHERE id={id}").on("id" -> id) as parser.*).headOption
+        (SQL("SELECT * FROM articles1 WHERE id={id}").on("id" -> id) as parser.*).headOption
       }
     } else None
 
   def add(a: Article) =
     DB.withConnection { implicit con =>
-      SQL("INSERT INTO articles (published, author, title, text) VALUES ({date},{author},{title},{text})").on(
+      SQL("INSERT INTO articles1 (published, author, title, text) VALUES ({date},{author},{title},{text})").on(
         "date" -> app.util.msec(a.date),
         "author" -> a.author,
         "title" -> a.title,
@@ -41,12 +41,12 @@ object Article {
 
   def delete(id: Long) =
     DB.withConnection { implicit con =>
-      SQL("DELETE FROM articles WHERE id={id}").on("id" -> id).executeUpdate()
+      SQL("DELETE FROM articles1 WHERE id={id}").on("id" -> id).executeUpdate()
     }
 
   def update(a: Article) =
     DB.withConnection { implicit con =>
-      SQL("UPDATE articles SET published={date},author={author},title={title},text={text} WHERE id={id}").on(
+      SQL("UPDATE articles1 SET published={date},author={author},title={title},text={text} WHERE id={id}").on(
         "id" -> a.id,
         "date" -> app.util.msec(a.date),
         "author" -> a.author,
