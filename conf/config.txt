@@ -2,6 +2,7 @@
 port=8000
 
 db.driver=org.postgresql.Driver
-db.url=jdbc:postgresql://sl-us-dal-9-portal.2.dblayer.com:10564/compose
-db.user=admin
-db.password=ABTQWVSHJASCBFNG
+db.url=jdbc:postgresql://localhost:5432/pean
+db.user=pg_user
+db.password=12345
+
