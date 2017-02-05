@@ -1,6 +1,6 @@
 packAutoSettings
 
-name := "crud"
+name := "postgres"
 
 version := "1.0"
 

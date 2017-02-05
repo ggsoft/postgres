@@ -1,11 +1,7 @@
 ## Synopsis
 
-Example of CRUD Web application with postgres database.
+Example of CRUD Web application with postgres database using scala-jdbc, unfiltered framework and scala tags.
   
-## Motivation  
-
-Project for Brian James 
-
 ## Running and packing in sbt
 
 To start this app in sbt do commands as follows:
